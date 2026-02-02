@@ -1,0 +1,433 @@
+body{
+    min-height: 100vh;
+    background-color: #FAFAFA;
+
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.grid-container{
+    display: grid;
+    width: 90%;
+    max-width: 1200px; ;
+    margin: 40px auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(200px, auto) minmax(200px, auto) minmax(200px, auto) minmax(200px, auto) minmax(200px, auto);
+    gap: 1.5em;
+    grid-template-areas: 
+    "box-1 box-1 box-1"
+    "box-2 box-2 box-3"
+    "box-4 box-4 box-3"
+    "box-5 box-5 box-6"
+    "box-7 box-7 box-6";
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.16);
+    padding: 24px;
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 10px 10px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8,
+        transparent));
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.8,
+        transparent,
+        rgba(255, 255, 255, 0.3)
+    ));
+}
+
+@media (max-width: 56em) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "box-1 box-1"
+            "box-2 box-3"
+            "box-4 box-5"
+            "box-6 box-7";
+    }
+}
+
+@media (max-width: 42em) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "box-1"
+            "box-2"
+            "box-3"
+            "box-4"
+            "box-5"
+            "box-6"
+            "box-7";
+    }
+}
+
+.intro-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-img{
+    width: 140px;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.university-badge {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.uni-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.uni-name {
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1;
+}
+
+
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.name-row h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #000000;
+}
+
+.pronouns {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 4px;
+}
+
+.title {
+    margin: -5px 0 -1px 0 !important;
+    font-size: 0.90rem !important;
+    font-weight: bold;
+    color: #000000;
+}
+
+.location {
+    margin: 0 !important;
+    font-size: 0.80rem !important;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.box h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.box p {
+    margin: 0 0 4px 0;
+    font-size: 0.82rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.6;
+}
+.about{
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.line{
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stack-title {
+    font-weight: bold;
+    color: #000000 !important;
+    margin-top: 25px !important;
+    font-size:0.82rem !important;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 0.72rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #000000;
+}
+
+.education-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+}
+
+.education-item:last-child {
+    padding-bottom: 0;
+}
+
+.education-row {
+    display: flex;
+    grid-template-rows: auto auto auto auto;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.level {
+    font-weight: bold;
+    color: #000000 !important;
+    font-size: 0.82rem !important;
+    margin-bottom: 0px !important;
+}
+
+.school {
+    color: rgba(0, 0, 0, 0.45) !important;
+    font-size: 0.75rem !important;
+    margin-top: 8px ;
+}
+
+.date {
+    font-size: 0.75rem !important;
+    color: rgba(0, 0, 0, 0.45) !important;
+    white-space: nowrap;
+}
+
+.hobby-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+}
+
+.type {
+    font-weight: bold;
+    color: #000000 !important;
+    font-size: 0.82rem !important;
+    margin-bottom: 0px !important;
+}
+
+.des {
+    color: rgba(0, 0, 0, 0.45) !important;
+    font-size: 0.75rem !important;
+    margin-top: 8px ;
+}
+
+.hobby-item:last-child {
+    padding-bottom: 0;
+}
+
+.card{
+    background: rgba(220, 219, 219, 0.4) !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 8px;
+}
+
+.card-body {
+    padding: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.82rem;
+}
+
+.certificate-link {
+    text-decoration: none !important;
+    color: inherit;
+    display: block;
+}
+
+.certificate-link:hover {
+    text-decoration: none !important;
+}
+
+.certificate-link {
+    text-decoration: none !important;
+    color: inherit;
+    display: block;
+}
+
+.certificate-link:hover {
+    text-decoration: none !important;
+}
+
+h5{
+    font-weight: bold;
+    color: #000000 !important;
+    margin-bottom: 5px !important;
+}
+
+.view-all-btn {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    font-weight: 500;
+}
+
+.view-all-btn:hover {
+    background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Tablet */
+@media (max-width: 56em) {
+    .intro-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 110px;
+    }
+    
+    .name-row h1 {
+        font-size: 1.4rem;
+    }
+    
+    .university-badge {
+        position: static;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 42em) {
+    .intro-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .profile-img {
+        width: 80px;
+        height: 90px;
+    }
+    
+    .intro-text {
+        align-items: center;
+    }
+    
+    .name-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    .name-row h1 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-buttons {
+        justify-content: center;
+    }
+    
+    .university-badge {
+        position: static;
+        margin-bottom: 8px;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    .uni-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .uni-name {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .university-badge {
+        position: static;
+        margin-bottom: 10px;
+    }
+    
+    .name-row h1 {
+        font-size: 1.6rem;
+    }
+}
